@@ -1,3 +1,8 @@
+---
+theme: jekyll-theme-minimal
+title: Peter Pegues - A Portfolio
+description: Stuff I have done and stuff I'm working on
+---
 # Peter Pegues - Portfolio
 
 ## [Boids](https://github.com/petepeg/PyGame-Boids)
@@ -36,3 +41,5 @@ The game follows four simple rules and demonstrates emergent behavior.
 This module implements the interface and logic for the Star Wars RPG by Fantasy Flight games.
 
 ![example](../FFG-Roller/example.png)
+
+[Test](./testpage)
