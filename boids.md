@@ -1,5 +1,4 @@
 ---
-layout: page
 theme: jekyll-theme-minimal
 title: "Boids"
 permalink: /boids/
