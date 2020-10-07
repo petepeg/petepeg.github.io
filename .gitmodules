@@ -1,0 +1,6 @@
+[submodule "PySudoku"]
+	path = PySudoku
+	url = https://github.com/petepeg/PySudoku.git
+[submodule "PyGame-Boids"]
+	path = PyGame-Boids
+	url = https://github.com/petepeg/PyGame-Boids.git
