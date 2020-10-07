@@ -3,7 +3,7 @@ theme: jekyll-theme-minimal
 title: Peter Pegues - A Portfolio
 description: Stuff I have done and stuff I'm working on
 ---
-# Peter Pegues - Portfolio
+# Peter Pegues - A Portfolio
 
 ## [Boids](https://github.com/petepeg/PyGame-Boids)
 This was a quick single day project where I wanted to try and write Boids just based on my interpretation of the rules. I challenged myself not to look at any other implementations of Boids during the process. This turned out to be more difficult than I thought, and has taken much lounger and undergone many revisions to make them flock to my satisfaction.
@@ -42,4 +42,4 @@ This module implements the interface and logic for the Star Wars RPG by Fantasy 
 
 ![example](../FFG-Roller/example.png)
 
-[Test](./testpage)
+[Test](./test/testpage)
