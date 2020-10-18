@@ -23,4 +23,4 @@ The final program I included was a RESTful API for MongoDB using PyMongo. I had 
 
 ## [Sudoku](/projects/sudoku/sudoku)
 
-## [Basic PyMongo](/projects/PyMongo/pymongo)
+## [Basic PyMongo](/projects/pyMongo/pymongo)
