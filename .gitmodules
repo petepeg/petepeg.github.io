@@ -10,3 +10,6 @@
 [submodule "FFG-Roller"]
 	path = FFG-Roller
 	url = https://github.com/petepeg/FFG-Roller.git
+[submodule "basicPyMongo"]
+	path = basicPyMongo
+	url = https://github.com/petepeg/basicPyMongo

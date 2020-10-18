@@ -2,7 +2,11 @@
 ### A quick implementation of Conway's Game of life in JavaScript and HTML.
 
 The game follows four simple rules and demonstrates emergent behavior.
-##### The Rules
+
+### [Narrative]()
+### [Code Review]()
+
+## The Rules
 1. Any live cell with fewer than two live neighbors dies, as if by loneliness.
 
 2. Any live cell with two or three live neighbors lives on to the next generation.
@@ -11,4 +15,4 @@ The game follows four simple rules and demonstrates emergent behavior.
 
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-![GliderGun](./GameOfLife/GOL.gif)
+![GliderGun](/GameOfLife/GOL.gif)

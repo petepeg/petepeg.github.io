@@ -3,4 +3,4 @@
 
 This module implements the interface and logic for the Star Wars RPG by Fantasy Flight games.
 
-![example](./FFG-Roller/example.png)
+![example](/FFG-Roller/example.png)
