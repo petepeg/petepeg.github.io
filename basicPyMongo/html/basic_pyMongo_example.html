@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>basic_pyMongo_example API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>basic_pyMongo_example</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/python
+import json
+from bson import json_util
+import bottle
+from bottle import route, run, get, request, abort
+import datetime
+from pymongo import MongoClient
+
+# Connect To DB
+try:
+  connection = MongoClient(&#39;localhost&#39;,27017)
+except:
+  print(&#34;Could Not Connect to Mongo DB&#34;)
+  
+db = connection[&#39;market&#39;]
+collection = db[&#39;stocks&#39;]
+
+##########
+# Create #
+##########
+@route(&#39;/createStock&#39;, method=&#39;POST&#39;)
+def create_stock():
+  &#34;&#34;&#34; 
+      # createStock
+      *Route /createStock, method POST*
+      ### Required Felids
+      **Ticker**: Three letter stock ticker identifer\n
+      **Price**: floating point value stock price
+      ### Return
+      On failed insert: 400\n
+      On failed connection: 404\n
+      Success: json, {&#34;_id&#34;}
+      ### Example
+      ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;Ticker&#34;:&#34;ZZZ&#34;,&#34;Price&#34;:5}&#39; http://localhost:8000/createStock```
+   &#34;&#34;&#34;
+  try:
+    result = &#34;&#34;
+    data = request.json
+    if data:
+      try:
+        result = collection.save(data)
+      except:
+        abort(400)
+  except:
+    abort(404)
+  return json.loads(json.dumps(result, indent=4, default=json_util.default)) 
+
+########
+# Read #
+########
+@route(&#39;/getStock&#39;, method=&#39;GET&#39;)
+def get_stock():
+  &#34;&#34;&#34; 
+  # getStock
+  *Route /getStock, method GET*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer
+  ### Return
+  On failed retreval or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json, {&#34;Price&#34;, &#34;_id&#34;, &#34;Ticker&#34;}
+  ### Example
+  ```curl http://localhost:8080/getStock?Ticker=&#34;ZZZ&#34;```
+  &#34;&#34;&#34;
+  try:
+    result = &#34;&#34;
+    request.query.Ticker
+    ticker = request.query.Ticker
+    query = {&#34;Ticker&#34;: ticker}
+    if ticker:
+      try:
+        result = collection.find_one(query)
+      except:
+        abort(400)
+  except NameError:
+    abort(404)
+  if result:
+    return json.loads(json.dumps(result, indent=4, default=json_util.default))
+  else:
+    return &#34;Nothing Found\n&#34;
+    
+##########
+# Update #
+##########
+
+@route(&#39;/updatePrice&#39;, method=&#39;POST&#39;)
+def update_price():
+  &#34;&#34;&#34; 
+  # updatePrice
+  *Route /updatePrice, method POST*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer\n
+  **Price**: floating point value stock price
+  ### Return
+  On failed retreval or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json {&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;}
+  ### Example
+  ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;Ticker&#34;:&#34;ZZZ&#34;,&#34;Price&#34;:15}&#39; http://localhost:8000/updatePrice```
+  &#34;&#34;&#34;
+  try:
+    response = &#34;&#34;
+    data = request.json
+    
+    if data:
+      query = {&#34;Ticker&#34;: data[&#39;Ticker&#39;]}
+      document = { &#34;$set&#34; : {&#34;Price&#34;: data[&#39;Price&#39;]} }
+    else:
+      abort(400)
+    # This could be much cleaner
+    if query and document:
+      try:
+        response = collection.find_one_and_update(query, document)
+      except:
+        abort(400)
+    else:
+      print(&#34;missing id or data...&#34;)
+  except:
+    abort(404)
+  if response:  
+    #Figure out how to get a newline at the end of this, super ugly in console
+    return json.loads(json.dumps(response, indent=4, default=json_util.default))
+  else:
+    abort(500)
+
+###########
+# DESTROY #
+###########
+@route(&#39;/delete&#39;, method=&#39;GET&#39;)
+def delete():
+  &#34;&#34;&#34; 
+  # delete
+  *Route /delete, method GET*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer
+  ### Return
+  On failed deletion or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json, {&#34;_id&#34;}
+  ### Example
+  ```curl http://localhost:8080/delete?Ticker=&#34;ZZZ&#34;```
+  &#34;&#34;&#34;
+  try:
+    response = &#34;&#34;
+    request.query.Ticker
+    ticker = request.query.Ticker
+    if ticker:
+      query = {&#34;Ticker&#34;:ticker}
+      try:
+        response = collection.delete_one(query)
+      except:
+        abort(400)
+  except:
+    abort(404)
+  return &#34;Deleted %s\n&#34;%(id)
+
+###########
+# Summary #
+###########
+@route(&#39;/getSummary&#39;, method=&#39;POST&#39;)
+def get_summary():
+  &#34;&#34;&#34; 
+  # getSummary
+  *Route /getSummary, method POST*
+  ### Required Felids
+  **list**: json formatted list of Tickers\n
+  ### Return
+  On failed retreval: 500\n
+  On failed connection: 404\n
+  On Success: json {{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},etc for length of list}
+  ### Example
+  ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;list&#34;:{&#34;AAA&#34;,&#34;BBB&#34;,&#34;CCC&#34;}}&#39; http://localhost:8000/getSummary```
+  &#34;&#34;&#34;
+  try:
+    response = []
+    data = request.json
+    list = data[&#39;list&#39;]
+   
+    if list:
+      for i in list:
+        try:
+          print(i)
+          response.append(collection.find_one({&#34;Ticker&#34;:i},{&#34;Ticker&#34;:1, &#34;Price&#34;:1}))
+        except:
+          abort(500)
+  except:
+    abort(404)
+  
+  return json.dumps(response, indent=4, default=json_util.default)
+
+#########
+# Top 5 #
+#########
+@route(&#39;/topFive&#39;, method=&#39;GET&#39;)
+def top_five():
+  &#34;&#34;&#34; 
+  # topFive
+  *Route /getSummary, method POST*
+  ### Required Felids
+  **industry**: name of an industry
+  ### Return
+  On failed retreval: 500\n
+  On failed connection: 404\n
+  On Success: json {{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},etc for length of list}
+  ### Example
+  ```curl http://localhost:8080/topfive?industry=&#34;Medical%20Laboratories%20%26%20Research&#34;```
+  &#34;&#34;&#34;
+  try:
+    request.query.Industry
+    industry = request.query.Industry
+    #industry = &#34;Medical Laboratories &amp; Research&#34;
+    pipeline = [
+      {&#34;$match&#34;:{&#34;Industry&#34;:industry}},
+      {&#34;$sort&#34;:{&#34;Price&#34;:-1}},
+      {&#34;$limit&#34;: 5},
+      {&#34;$group&#34;: {&#34;_id&#34;: &#34;$Ticker&#34;, &#34;Price&#34;:{&#34;$sum&#34;:&#34;$Price&#34;}}} #had to sum price to make the group work, should be ok, not sure why it wants to be this way
+    ]
+    if industry:
+      try:
+        response = collection.aggregate(pipeline)
+      except:
+        abort(500)
+  except:
+    abort(404)
+  
+  # gotta json it line by line, not sure why
+  final = []
+  for i in response:
+    print(i)
+    final.append(json.dumps(i, indent=4, default=json_util.default))
+  return final
+###############
+# Main Method #
+###############
+if __name__ == &#39;__main__&#39;:
+  #app.run(debug=True)
+  run(host=&#39;localhost&#39;, port=8080)
+  
+  </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="basic_pyMongo_example.create_stock"><code class="name flex">
+<span>def <span class="ident">create_stock</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="createstock">createStock</h1>
+<p><em>Route /createStock, method POST</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>Ticker</strong>: Three letter stock ticker identifer</p>
+<p><strong>Price</strong>: floating point value stock price</p>
+<h3 id="return">Return</h3>
+<p>On failed insert: 400</p>
+<p>On failed connection: 404</p>
+<p>Success: json, {"_id"}</p>
+<h3 id="example">Example</h3>
+<p><code>curl -H "Content-Type: application/json" -X POST -d'{"Ticker":"ZZZ","Price":5}' http://localhost:8000/createStock</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/createStock&#39;, method=&#39;POST&#39;)
+def create_stock():
+  &#34;&#34;&#34; 
+      # createStock
+      *Route /createStock, method POST*
+      ### Required Felids
+      **Ticker**: Three letter stock ticker identifer\n
+      **Price**: floating point value stock price
+      ### Return
+      On failed insert: 400\n
+      On failed connection: 404\n
+      Success: json, {&#34;_id&#34;}
+      ### Example
+      ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;Ticker&#34;:&#34;ZZZ&#34;,&#34;Price&#34;:5}&#39; http://localhost:8000/createStock```
+   &#34;&#34;&#34;
+  try:
+    result = &#34;&#34;
+    data = request.json
+    if data:
+      try:
+        result = collection.save(data)
+      except:
+        abort(400)
+  except:
+    abort(404)
+  return json.loads(json.dumps(result, indent=4, default=json_util.default)) </code></pre>
+</details>
+</dd>
+<dt id="basic_pyMongo_example.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="delete">delete</h1>
+<p><em>Route /delete, method GET</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>Ticker</strong>: Three letter stock ticker identifer</p>
+<h3 id="return">Return</h3>
+<p>On failed deletion or bad formating: 400</p>
+<p>On failed connection: 404</p>
+<p>On Success: json, {"_id"}</p>
+<h3 id="example">Example</h3>
+<p><code>curl http://localhost:8080/delete?Ticker="ZZZ"</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/delete&#39;, method=&#39;GET&#39;)
+def delete():
+  &#34;&#34;&#34; 
+  # delete
+  *Route /delete, method GET*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer
+  ### Return
+  On failed deletion or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json, {&#34;_id&#34;}
+  ### Example
+  ```curl http://localhost:8080/delete?Ticker=&#34;ZZZ&#34;```
+  &#34;&#34;&#34;
+  try:
+    response = &#34;&#34;
+    request.query.Ticker
+    ticker = request.query.Ticker
+    if ticker:
+      query = {&#34;Ticker&#34;:ticker}
+      try:
+        response = collection.delete_one(query)
+      except:
+        abort(400)
+  except:
+    abort(404)
+  return &#34;Deleted %s\n&#34;%(id)</code></pre>
+</details>
+</dd>
+<dt id="basic_pyMongo_example.get_stock"><code class="name flex">
+<span>def <span class="ident">get_stock</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="getstock">getStock</h1>
+<p><em>Route /getStock, method GET</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>Ticker</strong>: Three letter stock ticker identifer</p>
+<h3 id="return">Return</h3>
+<p>On failed retreval or bad formating: 400</p>
+<p>On failed connection: 404</p>
+<p>On Success: json, {"Price", "_id", "Ticker"}</p>
+<h3 id="example">Example</h3>
+<p><code>curl http://localhost:8080/getStock?Ticker="ZZZ"</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/getStock&#39;, method=&#39;GET&#39;)
+def get_stock():
+  &#34;&#34;&#34; 
+  # getStock
+  *Route /getStock, method GET*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer
+  ### Return
+  On failed retreval or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json, {&#34;Price&#34;, &#34;_id&#34;, &#34;Ticker&#34;}
+  ### Example
+  ```curl http://localhost:8080/getStock?Ticker=&#34;ZZZ&#34;```
+  &#34;&#34;&#34;
+  try:
+    result = &#34;&#34;
+    request.query.Ticker
+    ticker = request.query.Ticker
+    query = {&#34;Ticker&#34;: ticker}
+    if ticker:
+      try:
+        result = collection.find_one(query)
+      except:
+        abort(400)
+  except NameError:
+    abort(404)
+  if result:
+    return json.loads(json.dumps(result, indent=4, default=json_util.default))
+  else:
+    return &#34;Nothing Found\n&#34;</code></pre>
+</details>
+</dd>
+<dt id="basic_pyMongo_example.get_summary"><code class="name flex">
+<span>def <span class="ident">get_summary</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="getsummary">getSummary</h1>
+<p><em>Route /getSummary, method POST</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>list</strong>: json formatted list of Tickers</p>
+<h3 id="return">Return</h3>
+<p>On failed retreval: 500</p>
+<p>On failed connection: 404</p>
+<p>On Success: json {{"Price","_id","Ticker"},{"Price","_id","Ticker"},etc for length of list}</p>
+<h3 id="example">Example</h3>
+<p><code>curl -H "Content-Type: application/json" -X POST -d'{"list":{"AAA","BBB","CCC"}}' http://localhost:8000/getSummary</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/getSummary&#39;, method=&#39;POST&#39;)
+def get_summary():
+  &#34;&#34;&#34; 
+  # getSummary
+  *Route /getSummary, method POST*
+  ### Required Felids
+  **list**: json formatted list of Tickers\n
+  ### Return
+  On failed retreval: 500\n
+  On failed connection: 404\n
+  On Success: json {{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},etc for length of list}
+  ### Example
+  ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;list&#34;:{&#34;AAA&#34;,&#34;BBB&#34;,&#34;CCC&#34;}}&#39; http://localhost:8000/getSummary```
+  &#34;&#34;&#34;
+  try:
+    response = []
+    data = request.json
+    list = data[&#39;list&#39;]
+   
+    if list:
+      for i in list:
+        try:
+          print(i)
+          response.append(collection.find_one({&#34;Ticker&#34;:i},{&#34;Ticker&#34;:1, &#34;Price&#34;:1}))
+        except:
+          abort(500)
+  except:
+    abort(404)
+  
+  return json.dumps(response, indent=4, default=json_util.default)</code></pre>
+</details>
+</dd>
+<dt id="basic_pyMongo_example.top_five"><code class="name flex">
+<span>def <span class="ident">top_five</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="topfive">topFive</h1>
+<p><em>Route /getSummary, method POST</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>industry</strong>: name of an industry</p>
+<h3 id="return">Return</h3>
+<p>On failed retreval: 500</p>
+<p>On failed connection: 404</p>
+<p>On Success: json {{"Price","_id","Ticker"},{"Price","_id","Ticker"},etc for length of list}</p>
+<h3 id="example">Example</h3>
+<p><code>curl http://localhost:8080/topfive?industry="Medical%20Laboratories%20%26%20Research"</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/topFive&#39;, method=&#39;GET&#39;)
+def top_five():
+  &#34;&#34;&#34; 
+  # topFive
+  *Route /getSummary, method POST*
+  ### Required Felids
+  **industry**: name of an industry
+  ### Return
+  On failed retreval: 500\n
+  On failed connection: 404\n
+  On Success: json {{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},{&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;},etc for length of list}
+  ### Example
+  ```curl http://localhost:8080/topfive?industry=&#34;Medical%20Laboratories%20%26%20Research&#34;```
+  &#34;&#34;&#34;
+  try:
+    request.query.Industry
+    industry = request.query.Industry
+    #industry = &#34;Medical Laboratories &amp; Research&#34;
+    pipeline = [
+      {&#34;$match&#34;:{&#34;Industry&#34;:industry}},
+      {&#34;$sort&#34;:{&#34;Price&#34;:-1}},
+      {&#34;$limit&#34;: 5},
+      {&#34;$group&#34;: {&#34;_id&#34;: &#34;$Ticker&#34;, &#34;Price&#34;:{&#34;$sum&#34;:&#34;$Price&#34;}}} #had to sum price to make the group work, should be ok, not sure why it wants to be this way
+    ]
+    if industry:
+      try:
+        response = collection.aggregate(pipeline)
+      except:
+        abort(500)
+  except:
+    abort(404)
+  
+  # gotta json it line by line, not sure why
+  final = []
+  for i in response:
+    print(i)
+    final.append(json.dumps(i, indent=4, default=json_util.default))
+  return final</code></pre>
+</details>
+</dd>
+<dt id="basic_pyMongo_example.update_price"><code class="name flex">
+<span>def <span class="ident">update_price</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="updateprice">updatePrice</h1>
+<p><em>Route /updatePrice, method POST</em></p>
+<h3 id="required-felids">Required Felids</h3>
+<p><strong>Ticker</strong>: Three letter stock ticker identifer</p>
+<p><strong>Price</strong>: floating point value stock price</p>
+<h3 id="return">Return</h3>
+<p>On failed retreval or bad formating: 400</p>
+<p>On failed connection: 404</p>
+<p>On Success: json {"Price","_id","Ticker"}</p>
+<h3 id="example">Example</h3>
+<p><code>curl -H "Content-Type: application/json" -X POST -d'{"Ticker":"ZZZ","Price":15}' http://localhost:8000/updatePrice</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@route(&#39;/updatePrice&#39;, method=&#39;POST&#39;)
+def update_price():
+  &#34;&#34;&#34; 
+  # updatePrice
+  *Route /updatePrice, method POST*
+  ### Required Felids
+  **Ticker**: Three letter stock ticker identifer\n
+  **Price**: floating point value stock price
+  ### Return
+  On failed retreval or bad formating: 400\n
+  On failed connection: 404\n
+  On Success: json {&#34;Price&#34;,&#34;_id&#34;,&#34;Ticker&#34;}
+  ### Example
+  ```curl -H &#34;Content-Type: application/json&#34; -X POST -d&#39;{&#34;Ticker&#34;:&#34;ZZZ&#34;,&#34;Price&#34;:15}&#39; http://localhost:8000/updatePrice```
+  &#34;&#34;&#34;
+  try:
+    response = &#34;&#34;
+    data = request.json
+    
+    if data:
+      query = {&#34;Ticker&#34;: data[&#39;Ticker&#39;]}
+      document = { &#34;$set&#34; : {&#34;Price&#34;: data[&#39;Price&#39;]} }
+    else:
+      abort(400)
+    # This could be much cleaner
+    if query and document:
+      try:
+        response = collection.find_one_and_update(query, document)
+      except:
+        abort(400)
+    else:
+      print(&#34;missing id or data...&#34;)
+  except:
+    abort(404)
+  if response:  
+    #Figure out how to get a newline at the end of this, super ugly in console
+    return json.loads(json.dumps(response, indent=4, default=json_util.default))
+  else:
+    abort(500)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="basic_pyMongo_example.create_stock" href="#basic_pyMongo_example.create_stock">create_stock</a></code></li>
+<li><code><a title="basic_pyMongo_example.delete" href="#basic_pyMongo_example.delete">delete</a></code></li>
+<li><code><a title="basic_pyMongo_example.get_stock" href="#basic_pyMongo_example.get_stock">get_stock</a></code></li>
+<li><code><a title="basic_pyMongo_example.get_summary" href="#basic_pyMongo_example.get_summary">get_summary</a></code></li>
+<li><code><a title="basic_pyMongo_example.top_five" href="#basic_pyMongo_example.top_five">top_five</a></code></li>
+<li><code><a title="basic_pyMongo_example.update_price" href="#basic_pyMongo_example.update_price">update_price</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
